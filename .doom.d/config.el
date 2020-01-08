@@ -93,6 +93,7 @@
 (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
 
 ;; company settings
+(global-company-mode)
 (use-package company
   :config
   (setq company-idle-delay 0.2)
