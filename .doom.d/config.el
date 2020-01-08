@@ -138,12 +138,18 @@
 ;(define-key jedi-mode-map (kbd "M-[") 'jedi:goto-definition-pop-marker)
 
 ;; elpy, the python ide
-(use-package elpy
-  :init
-  (elpy-enable))
+(use-package elpy)
+(elpy-enable)
+(add-hook 'python-mode-hook 'elpy-mode)
+(add-hook 'elpy-mode-hook 'flycheck-mode)
+(add-hook 'pyenv-mode-hook 'elpy-rpc-restrat)
+(define-key elpy-mode-map (kbd "C-M-n") 'elpy-nav-forward-block)
+(define-key elpy-mode-map (kbd "C-M-p") 'elpy-nav-backward-block)
+(define-key elpy-mode-map (kbd "S-k") nil)
+(define-key elpy-mode-map (kbd "C-c C-k") 'elpy-doc)
 
 ;;============================================================
-;; NOTE: Mahan added these: BEGIN
+;; NOTE: Mahan added these: END
 ;;============================================================
 
 
