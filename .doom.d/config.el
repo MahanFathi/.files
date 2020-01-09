@@ -19,7 +19,7 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;; test
-(setq doom-font (font-spec :family "Fira Code" :size 16)
+(setq doom-font (font-spec :family "Fira Code" :size 18)
       doom-variable-pitch-font (font-spec :family "sans"))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
@@ -58,9 +58,9 @@
 ;; NOTE: Mahan added these: BEGIN
 ;;============================================================
 
-;; comment keybinding
-(global-set-key [?\C-/] 'comment-line)
-(global-set-key [?\C-\\] 'comment-line)
+;; comment-line
+(global-set-key (kbd "C-\\") 'comment-line)
+(global-set-key (kbd "C-/") 'comment-line)
 
 ;; fix TAB in evil-mode
 (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
@@ -93,6 +93,7 @@
 (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
 
 ;; company settings
+(global-company-mode)
 (use-package company
   :config
   (setq company-idle-delay 0.2)
@@ -130,25 +131,28 @@
 (setq python-shell-interpreter "python3")
 (setq jedi:key-goto-definition (kbd "M-]"))
 (setq jedi:key-goto-definition-pop-marker (kbd "M-["))
+;(define-key jedi-mode-map (kbd "C-c .") nil)
+;(define-key jedi-mode-map (kbd "C-c ,") nil)
+;(define-key jedi-mode-map (kbd "M-]") 'jedi:goto-definition)
+;(define-key jedi-mode-map (kbd "M-[") 'jedi:goto-definition-pop-marker)
+;(define-key jedi-mode-map (kbd "M-]") 'jedi:goto-definition)
+;(define-key jedi-mode-map (kbd "M-[") 'jedi:goto-definition-pop-marker)
 
 ;; elpy, the python ide
-(use-package elpy
-  :init
-  (elpy-enable))
+(use-package elpy)
+(elpy-enable)
+(add-hook 'python-mode-hook 'elpy-mode)
+(add-hook 'elpy-mode-hook 'flycheck-mode)
+(add-hook 'pyenv-mode-hook 'elpy-rpc-restrat)
+(define-key elpy-mode-map (kbd "C-M-n") 'elpy-nav-forward-block)
+(define-key elpy-mode-map (kbd "C-M-p") 'elpy-nav-backward-block)
+(define-key elpy-mode-map (kbd "S-k") nil)
+(define-key elpy-mode-map (kbd "C-c C-k") 'elpy-doc)
+(setq elpy-rpc-python-command "python3.6")
+(setq python-shell-interpreter "python3.6")
 
 ;;============================================================
 ;; NOTE: Mahan added these: END
 ;;============================================================
 
 
-
-;;============================================================
-;; NOTE: CHEAS SHEET: BEIGN
-;;============================================================
-;;
-;; * pyvevn-workon : change python, then do jedi:stop-server
-;; to restart jedi
-;;
-;;============================================================
-;; NOTE: CHEAS SHEET: END
-;;============================================================
