@@ -1,1 +1,21 @@
 set editing-mode vi
+set show-mode-in-prompt on
+set vi-ins-mode-string "+ "
+set vi-cmd-mode-string "- "
+
+# in vi-command mode
+set keymap vi-command
+Control-l: clear-screen
+Control-a: beginning-of-line
+# end-of-line is the only one that does not work.
+Control-e: end-of-line
+Control-k: kill-line
+Control-u: backward-kill-line
+
+# in vi-insert mode
+set keymap vi-insert
+Control-l: clear-screen
+Control-a: beginning-of-line
+Control-e: end-of-line
+Control-k: kill-line
+Control-u: backward-kill-line
