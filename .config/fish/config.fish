@@ -9,3 +9,6 @@ setenv EDITOR vim
 
 # python virtualenvwrapper
 eval (python -m virtualfish)
+
+# unset for fish
+alias unset "set --erase"
