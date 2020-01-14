@@ -12,15 +12,17 @@
 ;; Here are a couple examples:
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
-;(package! some-package)
+;; (package! some-package)
 (package! ggtags)
 (package! helm-gtags)
 (package! irony)
 (package! company-irony)
 (package! company-irony-c-headers)
+(package! company-glsl)
 (package! company-jedi)
 (package! elpy)
 (package! flycheck)
+(package! ssh)
 
 ;; To install a package directly from a particular repo, you'll need to specify
 ;; a `:recipe'. You'll find documentation on what `:recipe' accepts here:

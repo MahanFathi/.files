@@ -149,6 +149,14 @@
 (define-key elpy-mode-map (kbd "S-k") nil)
 (define-key elpy-mode-map (kbd "C-c C-k") 'elpy-doc)
 
+;; ssh settings
+(add-hook 'ssh-mode-hook
+          (lambda ()
+            (setq ssh-directory-tracking-mode t)
+            (shell-dirtrack-mode t)
+            (setq dirtrackp nil)))
+
+
 ;;============================================================
 ;; NOTE: Mahan added these: END
 ;;============================================================
