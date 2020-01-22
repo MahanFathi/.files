@@ -21,6 +21,7 @@
 (package! company-glsl)
 (package! company-jedi)
 (package! elpy)
+(package! realgud)
 (package! flycheck)
 (package! ssh)
 

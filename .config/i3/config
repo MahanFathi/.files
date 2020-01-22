@@ -218,7 +218,7 @@ bindsym $mod+shift+F9 exec xinput --enable 15
 bindsym $mod+shift+x exec bash /home/mahan/.config/i3/scripts/lock.sh
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-fill /home/mahan/.config/i3/wallpapers/wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill /home/mahan/.config/i3/wallpapers/wallpaper.png
 
 # For Graphics
 #exec --no-startup-id compton --config ~/.config/compton.conf -fb
@@ -232,6 +232,7 @@ bindsym $mod+shift+z exec bash /home/mahan/.config/i3/scripts/lockandsus.sh
 
 # When Inactive
 exec --no-startup-id xautolock -detectsleep -time 9 -locker /home/mahan/.config/i3/scripts/lock.sh
+exec --no-startup-id xscreensaver -no-splash &
 
 # Trackpad Horizontal Scrolling Settings
 exec_always xinput --set-prop 15 "Synaptics Two-Finger Scrolling" 1 1

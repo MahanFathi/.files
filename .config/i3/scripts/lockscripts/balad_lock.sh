@@ -10,9 +10,9 @@ then
 	convert -resize 10% /tmp/screen.png /tmp/screen.png
 	convert -resize 1000% /tmp/screen.png /tmp/screen.png
 
-	composite -geometry +550+50 /home/mahan/.config/i3/lockpngs/balad.png /tmp/screen.png /tmp/lock.png
+	composite -geometry +250-150 /home/mahan/.config/i3/lockpngs/balad.png /tmp/screen.png /tmp/lock.png
 
-	composite -geometry +2850-150 /home/mahan/.config/i3/lockpngs/balad.png /tmp/lock.png /tmp/lock.png
+	composite -geometry +2200-150 /home/mahan/.config/i3/lockpngs/balad.png /tmp/lock.png /tmp/lock.png
 
 
 	i3lock -u -i /tmp/lock.png
