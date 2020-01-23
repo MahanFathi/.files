@@ -20,7 +20,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/extras/CUPTI/lib64
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/targets/x86_64-linux/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib64
 
-alias sepah="echo -e 'yes\nir523701\n649561' | sudo openconnect --reconnect 1 s4890.goo.world"
+alias sepah="echo -e 'yes\nir523701\n649561' | sudo openconnect --reconnect 1 s9150.uiadd.site"
 
 # python-virtualenvwrapper settings
 export WORKON_HOME=~/.virtualenvs

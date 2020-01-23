@@ -110,6 +110,7 @@
   :config
   (add-to-list 'company-backends 'company-irony)
   (add-to-list 'company-backends 'company-irony-c-headers)
+  (add-to-list 'company-backends 'company-c-headers)
   (add-to-list 'company-backends 'company-jedi))
 ;;(setq c-c++-enable-clang-support nil)
 ;;(setq company-c-headers-path-system '("/usr/include/c++/9.2.0" "/usr/include" "/usr/local/include"))
