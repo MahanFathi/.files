@@ -156,6 +156,7 @@
             (shell-dirtrack-mode t)
             (setq dirtrackp nil)))
 
+(custom-set-variables '(x-select-enable-primary t))
 
 ;;============================================================
 ;; NOTE: Mahan added these: END
