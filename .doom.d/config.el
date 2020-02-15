@@ -58,6 +58,9 @@
 ;; NOTE: Mahan added these: BEGIN
 ;;============================================================
 
+;; for file changes on disk (e.g. on git checkout)
+(global-auto-revert-mode)
+
 ;; comment-line
 (global-set-key (kbd "C-\\") 'comment-line)
 (global-set-key (kbd "C-/") 'comment-line)
