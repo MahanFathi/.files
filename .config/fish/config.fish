@@ -9,3 +9,5 @@ eval (python -m virtualfish)
 
 # emacs 
 alias emacs="emacs -nw --eval '(setq doom-theme \'doom-tomorrow-night)'"
+# doom
+alias doom="~/.emacs.d/bin/doom"

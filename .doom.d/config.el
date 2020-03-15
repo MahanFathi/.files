@@ -155,6 +155,33 @@
 (setq elpy-rpc-python-command "python3.6")
 (setq python-shell-interpreter "python3.6")
 
+;; projectile
+(setq projectile-project-search-path
+      '(
+        "~/Mahan/UC"
+        )
+      )
+
+;; org-mode
+;; (after! org
+;;   (setq org-agenda-files '("~/Mahan/org"))
+;;   (org-babel-do-load-languages
+;;    'org-babel-load-languages
+;;    '(
+;;      (c++ . t)
+;;      (python . t)
+;;      (ditaa . t)
+;;      (dot . t)
+;;     )
+;;   )
+;; )
+
+;; avy for all windows
+(setq avy-all-windows t)
+
+;; ispell dicionary
+(ispell-change-dictionary "english")
+
 ;;============================================================
 ;; NOTE: Mahan added these: END
 ;;============================================================
