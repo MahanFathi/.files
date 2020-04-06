@@ -171,6 +171,9 @@ set $inactive-text-color #004445
 set $urgent-bg-color     #E53935
 set $sed-blue-mink 	 #5CBAFC
 
+# window border
+# new_window 1pixel
+
 # window colors
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          $sed-blue-mink

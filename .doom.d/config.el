@@ -68,6 +68,9 @@
 ;; fix TAB in evil-mode
 (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
 
+;; helm
+(require 'helm-config)
+
 ;; ggtags settings
 (require 'ggtags)
 
@@ -132,9 +135,10 @@
 (add-hook 'python-mode-hook 'jedi-mode)
 (setq jedi:setup-keys t)
 (add-hook 'python-mode-hook 'jedi:setup)
-(setq python-shell-interpreter "python3")
 (setq jedi:key-goto-definition (kbd "M-]"))
 (setq jedi:key-goto-definition-pop-marker (kbd "M-["))
+(setq python-shell-completion-native-enable nil)
+;(setq python-shell-interpreter "python3")
 ;(define-key jedi-mode-map (kbd "C-c .") nil)
 ;(define-key jedi-mode-map (kbd "C-c ,") nil)
 ;(define-key jedi-mode-map (kbd "M-]") 'jedi:goto-definition)
@@ -148,12 +152,12 @@
 (add-hook 'python-mode-hook 'elpy-mode)
 (add-hook 'elpy-mode-hook 'flycheck-mode)
 (add-hook 'pyenv-mode-hook 'elpy-rpc-restrat)
+(setq elpy-rpc-backend "jedi")
 (define-key elpy-mode-map (kbd "C-M-n") 'elpy-nav-forward-block)
 (define-key elpy-mode-map (kbd "C-M-p") 'elpy-nav-backward-block)
 (define-key elpy-mode-map (kbd "S-k") nil)
-(define-key elpy-mode-map (kbd "C-c C-k") 'elpy-doc)
-(setq elpy-rpc-python-command "python3.6")
-(setq python-shell-interpreter "python3.6")
+;; (setq elpy-rpc-python-command "python3.6")
+;; (setq python-shell-interpreter "python3.6")
 
 ;; projectile
 (setq projectile-project-search-path
