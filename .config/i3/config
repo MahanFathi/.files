@@ -218,7 +218,7 @@ bindsym $mod+shift+F9 exec xinput --enable 15
 bindsym $mod+shift+x exec bash /home/mahan/.config/i3/scripts/lock.sh
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-fill /home/mahan/.config/i3/wallpapers/wallpaper.png
+exec_always --no-startup-id feh --bg-fill /home/mahan/.config/i3/wallpapers/wallpaper.jpg
 
 # For Graphics
 #exec --no-startup-id compton --config ~/.config/compton.conf -fb
