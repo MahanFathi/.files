@@ -68,6 +68,9 @@
 ;; fix TAB in evil-mode
 (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
 
+;; helm
+(require 'helm-config)
+
 ;; ggtags settings
 (require 'ggtags)
 
@@ -113,6 +116,7 @@
   :config
   (add-to-list 'company-backends 'company-irony)
   (add-to-list 'company-backends 'company-irony-c-headers)
+  (add-to-list 'company-backends 'company-c-headers)
   (add-to-list 'company-backends 'company-jedi))
 ;;(setq c-c++-enable-clang-support nil)
 ;;(setq company-c-headers-path-system '("/usr/include/c++/9.2.0" "/usr/include" "/usr/local/include"))
@@ -131,9 +135,10 @@
 (add-hook 'python-mode-hook 'jedi-mode)
 (setq jedi:setup-keys t)
 (add-hook 'python-mode-hook 'jedi:setup)
-(setq python-shell-interpreter "python3")
 (setq jedi:key-goto-definition (kbd "M-]"))
 (setq jedi:key-goto-definition-pop-marker (kbd "M-["))
+(setq python-shell-completion-native-enable nil)
+;(setq python-shell-interpreter "python3")
 ;(define-key jedi-mode-map (kbd "C-c .") nil)
 ;(define-key jedi-mode-map (kbd "C-c ,") nil)
 ;(define-key jedi-mode-map (kbd "M-]") 'jedi:goto-definition)
@@ -147,22 +152,40 @@
 (add-hook 'python-mode-hook 'elpy-mode)
 (add-hook 'elpy-mode-hook 'flycheck-mode)
 (add-hook 'pyenv-mode-hook 'elpy-rpc-restrat)
+(setq elpy-rpc-backend "jedi")
 (define-key elpy-mode-map (kbd "C-M-n") 'elpy-nav-forward-block)
 (define-key elpy-mode-map (kbd "C-M-p") 'elpy-nav-backward-block)
 (define-key elpy-mode-map (kbd "S-k") nil)
-(define-key elpy-mode-map (kbd "C-c C-k") 'elpy-doc)
+;; (setq elpy-rpc-python-command "python3.6")
+;; (setq python-shell-interpreter "python3.6")
 
-;; ssh settings
-(add-hook 'ssh-mode-hook
-          (lambda ()
-            (setq ssh-directory-tracking-mode t)
-            (shell-dirtrack-mode t)
-            (setq dirtrackp nil)))
+;; projectile
+(setq projectile-project-search-path
+      '(
+        "~/Mahan/UC"
+        )
+      )
 
-(custom-set-variables '(x-select-enable-primary t))
+;; org-mode
+;; (after! org
+;;   (setq org-agenda-files '("~/Mahan/org"))
+;;   (org-babel-do-load-languages
+;;    'org-babel-load-languages
+;;    '(
+;;      (c++ . t)
+;;      (python . t)
+;;      (ditaa . t)
+;;      (dot . t)
+;;     )
+;;   )
+;; )
+
+;; avy for all windows
+(setq avy-all-windows t)
+
+;; ispell dicionary
+(ispell-change-dictionary "english")
 
 ;;============================================================
 ;; NOTE: Mahan added these: END
 ;;============================================================
-
-

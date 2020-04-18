@@ -12,3 +12,6 @@ eval (python -m virtualfish)
 
 # unset for fish
 alias unset "set --erase"
+
+# doom
+alias doom="~/.emacs.d/bin/doom"
