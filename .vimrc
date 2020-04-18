@@ -10,7 +10,7 @@ set noshowmode
 "autocmd vimenter * NERDTree
 
 " Copy directly to clipboard
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 " JavaScript
 let g:javascript_plugin_jsdoc = 1
