@@ -294,7 +294,6 @@ exec --no-startup-id pamac-tray
 # exec_always --no-startup-id start_conky_maia
 exec_always --no-startup-id start_conky_green
 # exec --no-startup-id xautolock -time 10 -locker blurlock
-exec --no-startup-id xautolock -detectsleep -time 9 -locker /home/mahan/.config/i3/scripts/lock.sh
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id nitrogen --set-auto /home/mahan/.config/i3/wallpapers/wallpaper.jpg # wallpaper
