@@ -186,6 +186,13 @@
 ;; ispell dicionary
 (ispell-change-dictionary "english")
 
+
+;; common lisp
+;(define-key sly-mode-map (kbd "<M-up>") 'sly-prev-completion)
+;(define-key sly-mode-map (kbd "<M-down>") 'sly-next-completion)
+;(define-key sly-mode-map (kbd "<M-RET>") 'sly-choose-completion)
+
+
 ;;============================================================
 ;; NOTE: Mahan added these: END
 ;;============================================================
