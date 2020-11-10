@@ -84,7 +84,6 @@
  helm-gtags-prefix-key "\C-cg"
  helm-gtags-suggested-key-mapping t
  )
-(require 'helm-gtags)
 ;; Enable helm-gtags-mode
 (add-hook 'dired-mode-hook 'helm-gtags-mode)
 (add-hook 'eshell-mode-hook 'helm-gtags-mode)
@@ -185,6 +184,20 @@
 
 ;; ispell dicionary
 (ispell-change-dictionary "english")
+
+
+;; common lisp
+;(define-key sly-mode-map (kbd "<M-up>") 'sly-prev-completion)
+;(define-key sly-mode-map (kbd "<M-down>") 'sly-next-completion)
+;(define-key sly-mode-map (kbd "<M-RET>") 'sly-choose-completion)
+
+
+;; go
+;; FIXME: this is very nasty
+(add-hook 'go-mode-hook (lambda () (progn
+                                     (require 'go-autocomplete)
+                                     (require 'auto-complete-config)
+                                     (ac-config-default))))
 
 ;;============================================================
 ;; NOTE: Mahan added these: END
