@@ -192,8 +192,15 @@
 ;(define-key sly-mode-map (kbd "<M-RET>") 'sly-choose-completion)
 
 ;; go (+lsp)
+(use-package lsp)
 (define-key lsp-mode-map (kbd "M-]") 'xref-find-definitions)
 (define-key lsp-mode-map (kbd "M-[") 'xref-find-references)
+(exec-path-from-shell-copy-env "GOPATH")
+(when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize))
+(defun my/go-mode-hook ()
+  (add-to-list 'exec-path (concat (getenv "GOPATH") "/bin")))
+(add-hook 'go-mode-hook 'my/go-mode-hook)
 
 
 ;;============================================================
