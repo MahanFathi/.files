@@ -5,9 +5,12 @@ set fish_key_bindings fish_vi_key_bindings
 setenv EDITOR vim
 
 # python virtualenvwrapper
-eval (python -m virtualfish)
+# eval (python -m virtualfish)
 
 # emacs 
 alias emacs="emacs -nw --eval '(setq doom-theme \'doom-tomorrow-night)'"
 # doom
 alias doom="~/.emacs.d/bin/doom"
+
+# add gopath 
+setenv GOPATH /home/mahan/go
