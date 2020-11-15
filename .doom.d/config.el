@@ -191,13 +191,10 @@
 ;(define-key sly-mode-map (kbd "<M-down>") 'sly-next-completion)
 ;(define-key sly-mode-map (kbd "<M-RET>") 'sly-choose-completion)
 
+;; go (+lsp)
+(define-key lsp-mode-map (kbd "M-]") 'xref-find-definitions)
+(define-key lsp-mode-map (kbd "M-[") 'xref-find-references)
 
-;; go
-;; FIXME: this is very nasty
-(add-hook 'go-mode-hook (lambda () (progn
-                                     (require 'go-autocomplete)
-                                     (require 'auto-complete-config)
-                                     (ac-config-default))))
 
 ;;============================================================
 ;; NOTE: Mahan added these: END
