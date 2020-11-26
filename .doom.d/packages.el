@@ -26,6 +26,7 @@
 (package! yaml-mode)
 (package! company-lsp)
 (package! exec-path-from-shell)
+(package! protobuf-mode)
 
 ;; To install a package directly from a particular repo, you'll need to specify
 ;; a `:recipe'. You'll find documentation on what `:recipe' accepts here:
