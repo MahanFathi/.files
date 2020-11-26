@@ -12,5 +12,8 @@ alias emacs="emacs -nw --eval '(setq doom-theme \'doom-tomorrow-night)'"
 # doom
 alias doom="~/.emacs.d/bin/doom"
 
-# add gopath 
+# gopath and go executables
 setenv GOPATH /home/mahan/go
+set -gx PATH /home/mahan/go/bin $PATH
+
+
