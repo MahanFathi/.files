@@ -134,8 +134,8 @@
 (add-hook 'python-mode-hook 'jedi-mode)
 (setq jedi:setup-keys t)
 (add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:key-goto-definition (kbd "M-]"))
-(setq jedi:key-goto-definition-pop-marker (kbd "M-["))
+;; (setq jedi:key-goto-definition (kbd "M-]"))
+;; (setq jedi:key-goto-definition-pop-marker (kbd "M-["))
 (setq python-shell-completion-native-enable nil)
 ;(setq python-shell-interpreter "python3")
 ;(define-key jedi-mode-map (kbd "C-c .") nil)
@@ -191,10 +191,12 @@
 ;(define-key sly-mode-map (kbd "<M-down>") 'sly-next-completion)
 ;(define-key sly-mode-map (kbd "<M-RET>") 'sly-choose-completion)
 
-;; go (+lsp)
+;; ( +lsp) for python, go, etc.
 (use-package lsp)
 (define-key lsp-mode-map (kbd "M-]") 'xref-find-definitions)
 (define-key lsp-mode-map (kbd "M-[") 'xref-find-references)
+
+;; go
 (exec-path-from-shell-copy-env "GOPATH")
 (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize))
