@@ -45,10 +45,14 @@ set guicursor+=a:blinkon0
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
-"let g:syntastic_check_on_open = 1
+let g:syntastic_mode_map = {
+     \ "mode": "active",
+     \ "active_filetypes": [""],
+     \ "passive_filetypes": ["cpp"] }
 
 
 " BufExplorer Settings
@@ -59,17 +63,17 @@ nmap <c-F11> :BufExplorerVerticalSplit<CR>
 syntax on
 
 " VIM Theme
-let g:onedark_color_overrides = {
-\ "black": {"gui": "#000000", "cterm": "256", "cterm16": "0" },
-\ "purple": { "gui": "#C678DF", "cterm": "170", "cterm16": "5" }
-\}
-let g:airline_theme='onedark'
-let g:onedark_termcolors=256
-let g:onedark_terminal_italics=1
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
-colorscheme onedark
+" let g:onedark_color_overrides = {
+" \ "black": {"gui": "#000000", "cterm": "256", "cterm16": "0" },
+" \ "purple": { "gui": "#C678DF", "cterm": "170", "cterm16": "5" }
+" \}
+" let g:airline_theme='onedark'
+" let g:onedark_termcolors=256
+" let g:onedark_terminal_italics=1
+" let g:lightline = {
+"   \ 'colorscheme': 'onedark',
+"   \ }
+" colorscheme onedark
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -167,7 +171,6 @@ Plugin 'xavierd/clang_complete'
 " Vim Snippets 
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
 
