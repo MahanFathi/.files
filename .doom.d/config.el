@@ -58,6 +58,9 @@
 ;; NOTE: Mahan added these: BEGIN
 ;;============================================================
 
+;; make `bash' the shell
+(setq shell-file-name "/bin/bash")
+
 ;; for file changes on disk (e.g. on git checkout)
 (global-auto-revert-mode)
 
@@ -155,8 +158,8 @@
 (define-key elpy-mode-map (kbd "C-M-n") 'elpy-nav-forward-block)
 (define-key elpy-mode-map (kbd "C-M-p") 'elpy-nav-backward-block)
 (define-key elpy-mode-map (kbd "S-k") nil)
-;; (setq elpy-rpc-python-command "python3.6")
-;; (setq python-shell-interpreter "python3.6")
+(setq elpy-rpc-python-command "python")
+(setq python-shell-interpreter "python")
 
 ;; projectile
 (setq projectile-project-search-path
@@ -193,7 +196,7 @@
 
 ;; ( +lsp) for python, go, etc.
 (use-package lsp)
-(define-key lsp-mode-map (kbd "M-]") 'xref-find-definitions)
+(define-key lsp-mode-map (kbd "M-]") 'xref-find-definitions) ; use g d, C-o, and C-i
 (define-key lsp-mode-map (kbd "M-[") 'xref-find-references)
 
 ;; go
