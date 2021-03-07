@@ -58,6 +58,9 @@
 ;; NOTE: Mahan added these: BEGIN
 ;;============================================================
 
+;; treat `_' as part of word
+(modify-syntax-entry ?_ "w")
+
 ;; make `bash' the shell
 (setq shell-file-name "/bin/bash")
 
