@@ -211,6 +211,24 @@
 (add-hook 'go-mode-hook 'my/go-mode-hook)
 
 
+;; source code syntax highlighting org to pdf export
+(require 'org)
+(require 'ox-latex)
+(add-to-list 'org-latex-packages-alist '("" "minted"))
+(setq org-latex-listings 'minted)
+
+(setq org-latex-pdf-process
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+(setq org-src-fontify-natively t)
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((R . t)
+   (latex . t)))
+
 ;;============================================================
 ;; NOTE: Mahan added these: END
 ;;============================================================
