@@ -13,6 +13,9 @@
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
+(package! jupyter)
+(package! ein)
+(package! magit-section)
 (package! ggtags)
 (package! helm-gtags)
 (package! irony)
