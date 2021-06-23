@@ -51,6 +51,9 @@ exec --no-startup-id volumeicon
 
 ################################################################################################
 
+# Fix screen tearing with nvidia-settings
+exec --no-startup-id nvidia-settings --assign CurrentMetaMode="$(nvidia-settings -q CurrentMetaMode -t|tr '\n' ' '|sed -e 's/.*:: \(.*\)/\1\n/g' -e 's/}/, ForceCompositionPipeline = On}/g')" > /dev/null
+
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec "~/.config/i3/scripts/brightness/up.sh"
 bindsym XF86MonBrightnessDown exec "~/.config/i3/scripts/brightness/down.sh"
