@@ -58,6 +58,9 @@
 ;; NOTE: Mahan added these: BEGIN
 ;;============================================================
 
+;; fixes the sentinel error
+(add-to-list 'process-coding-system-alist '("python" . (utf-8 . utf-8)))
+
 ;; treat `_' as part of word
 (modify-syntax-entry ?_ "w")
 
@@ -152,17 +155,17 @@
 ;(define-key jedi-mode-map (kbd "M-[") 'jedi:goto-definition-pop-marker)
 
 ;; elpy, the python ide
-(use-package elpy)
-(elpy-enable)
-(add-hook 'python-mode-hook 'elpy-mode)
-(add-hook 'elpy-mode-hook 'flycheck-mode)
-(add-hook 'pyenv-mode-hook 'elpy-rpc-restrat)
-(setq elpy-rpc-backend "jedi")
-(define-key elpy-mode-map (kbd "C-M-n") 'elpy-nav-forward-block)
-(define-key elpy-mode-map (kbd "C-M-p") 'elpy-nav-backward-block)
-(define-key elpy-mode-map (kbd "S-k") nil)
-(setq elpy-rpc-python-command "python")
-(setq python-shell-interpreter "python")
+;; (use-package elpy)
+;; (elpy-enable)
+;; (add-hook 'python-mode-hook 'elpy-mode)
+;; (add-hook 'elpy-mode-hook 'flycheck-mode)
+;; (add-hook 'pyenv-mode-hook 'elpy-rpc-restrat)
+;; (setq elpy-rpc-backend "jedi")
+;; (define-key elpy-mode-map (kbd "C-M-n") 'elpy-nav-forward-block)
+;; (define-key elpy-mode-map (kbd "C-M-p") 'elpy-nav-backward-block)
+;; (define-key elpy-mode-map (kbd "S-k") nil)
+;; (setq elpy-rpc-python-command "python")
+;; (setq python-shell-interpreter "python")
 
 ;; projectile
 (setq projectile-project-search-path
@@ -199,6 +202,10 @@
 
 ;; ( +lsp) for python, go, etc.
 (use-package lsp)
+;; (use-package lsp-python-ms
+;;   :ensure t
+;;   :demand
+;;   :hook (python-mode . lsp))
 (define-key lsp-mode-map (kbd "M-]") 'xref-find-definitions) ; use g d, C-o, and C-i
 (define-key lsp-mode-map (kbd "M-[") 'xref-find-references)
 
@@ -228,6 +235,13 @@
  'org-babel-load-languages
  '((R . t)
    (latex . t)))
+
+(setq org-latex-listings 'minted
+      org-latex-packages-alist '(("" "minted"))
+      org-latex-pdf-process
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
 ;;============================================================
 ;; NOTE: Mahan added these: END

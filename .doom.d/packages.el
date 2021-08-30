@@ -22,7 +22,7 @@
 (package! company-irony)
 (package! company-irony-c-headers)
 (package! company-jedi)
-(package! elpy)
+(package! elpy :disable t)
 (package! flycheck)
 (package! slime :disable t)
 (package! slime-company)
@@ -30,6 +30,7 @@
 (package! company-lsp)
 (package! exec-path-from-shell)
 (package! protobuf-mode)
+(package! lsp-python-ms :disable t)
 
 ;; To install a package directly from a particular repo, you'll need to specify
 ;; a `:recipe'. You'll find documentation on what `:recipe' accepts here:
