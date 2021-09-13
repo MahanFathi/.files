@@ -74,8 +74,8 @@ run_watch VPN {
 
 #%Y-%m-%d %H:%M:%S'
 tztime utc {
-    format = " %d/%m/%Y   %H:%M:%S %Z"
-    timezone = "Etc/UTC"
+    format = " %d/%m/%Y   %H:%M:%S"
+    timezone = "America/New_York"
 
 }
 
