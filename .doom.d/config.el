@@ -243,6 +243,16 @@
         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
+;; org-roam
+(use-package org-roam
+  :ensure t
+  :init
+  (setq org-roam-v2-ack t)
+  :custom
+  (org-roam-directory "~/Dropbox/OrgRoam")
+  :config
+  (org-roam-setup))
+
 ;;============================================================
 ;; NOTE: Mahan added these: END
 ;;============================================================

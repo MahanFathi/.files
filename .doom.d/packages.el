@@ -31,6 +31,7 @@
 (package! exec-path-from-shell)
 (package! protobuf-mode)
 (package! lsp-python-ms :disable t)
+(package! org-roam)
 
 ;; To install a package directly from a particular repo, you'll need to specify
 ;; a `:recipe'. You'll find documentation on what `:recipe' accepts here:
