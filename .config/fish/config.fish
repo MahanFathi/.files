@@ -17,7 +17,7 @@ setenv GOPATH /home/mahan/go
 set -gx PATH /home/mahan/go/bin $PATH
 
 # LD_LIBRARY_PATH for mujoco
-set -gx LD_LIBRARY_PATH /home/mahan/.mujoco/mujoco200/bin $LD_LIBRARY_PATH
+set -gx LD_LIBRARY_PATH /home/mahan/.mujoco/mujoco210/bin /usr/lib/nvidia $LD_LIBRARY_PATH
 
 # LD_PRELOAD (for mujoco-py)
 set -gx LD_PRELOAD /usr/lib/libGLEW.so $LD_PRELOAD
