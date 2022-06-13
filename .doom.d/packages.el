@@ -23,11 +23,12 @@
 (package! company-irony-c-headers)
 (package! company-jedi)
 (package! elpy :disable t)
-(package! flycheck)
+;; (package! flycheck)
 (package! slime :disable t)
 (package! slime-company)
 (package! yaml-mode)
 (package! company-lsp)
+(package! lsp-pyright)
 (package! exec-path-from-shell)
 (package! protobuf-mode)
 (package! lsp-python-ms :disable t)
@@ -37,6 +38,7 @@
 (package! key-chord)
 (package! yasnippet)
 (package! gitconfig-mode)
+(package! org-pomodoro)
 
 ;; To install a package directly from a particular repo, you'll need to specify
 ;; a `:recipe'. You'll find documentation on what `:recipe' accepts here:
@@ -55,6 +57,8 @@
 ;; you can do so here with the `:disable' property:
 ;(package! builtin-package :disable t)
 (package! anaconda-mode :disable t)
+(package! flycheck :disable t)
+(package! lsp-pyright :disable t) ;; pyright sounds better but for later
 
 ;; You can override the recipe of a built in package without having to specify
 ;; all the properties for `:recipe'. These will inherit the rest of its recipe

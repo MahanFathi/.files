@@ -141,6 +141,7 @@
   (add-to-list 'company-backends 'company-jedi))
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 (add-hook 'python-mode-hook 'jedi-mode)
+(add-hook 'python-mode-hook 'flycheck-mode)
 (setq jedi:setup-keys t)
 (add-hook 'python-mode-hook 'jedi:setup)
 ;; (setq jedi:key-goto-definition (kbd "M-]"))
@@ -166,6 +167,7 @@
 ;; (define-key elpy-mode-map (kbd "S-k") nil)
 ;; (setq elpy-rpc-python-command "python")
 ;; (setq python-shell-interpreter "python")
+
 
 ;; projectile
 (setq projectile-project-search-path
@@ -208,6 +210,7 @@
 ;;   :hook (python-mode . lsp))
 (define-key lsp-mode-map (kbd "M-]") 'xref-find-definitions) ; use g d, C-o, and C-i
 (define-key lsp-mode-map (kbd "M-[") 'xref-find-references)
+
 
 ;; go
 (exec-path-from-shell-copy-env "GOPATH")
@@ -252,6 +255,13 @@
   (org-roam-directory "~/Dropbox/OrgRoam")
   :config
   (org-roam-setup))
+
+;; org-pomodoro
+(setq org-clock-sound "~/.doom.d/assets/pomodoro.wav")
+
+
+;; disable flycheck
+(setq flycheck-mode nil)
 
 ;;============================================================
 ;; NOTE: Mahan added these: END
